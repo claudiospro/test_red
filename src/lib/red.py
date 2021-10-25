@@ -9,10 +9,8 @@ def get():
     process = subprocess.Popen([command, '--json'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     result = process.communicate()
 
-    if result:
-
-        return json.loads(result[0].decode('utf-8'))
-    else:
+    if not (result and result[0]):
         return []
+    return json.loads(result[0].decode('utf-8'))
 
 
