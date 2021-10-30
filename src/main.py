@@ -22,8 +22,8 @@ if __name__ == "__main__":
         file_path = args.file_path
 
     if args.test_mode:
-        while True:
-            logic.execute(file_path)
-            time.sleep(minute_interval * 60)
-    print('test mode')
-    logic.execute(file_path)
+        print('test mode')
+        logic.execute(file_path)
+    while True:
+        logic.execute(file_path)
+        time.sleep(minute_interval * 60)
