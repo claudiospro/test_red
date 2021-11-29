@@ -10,7 +10,7 @@ def get():
     result = process.communicate()
 
     if not (result and result[0]):
-        return []
+        return False
     return json.loads(result[0].decode('utf-8'))
 
 
